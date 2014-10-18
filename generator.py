@@ -11,5 +11,9 @@ app = Flask(__name__)
 def index():
     return 'Hello, World!'
 
+@app.route('/blog/post/')
+def post():
+    return render_template('post.html', post_content="HELLO!")
+
 if __name__ == '__main__':
     app.run(port=8000)
