@@ -2,11 +2,11 @@
 
 {% block content %}
 <div>
-  <h1 id="header">Blog Post Title</h1>
+  <h1>Blog Post Title</h1>
   <h2>Subtitle</h2>
-  <h3 id="date">date</h3>
+  <h3>date</h3>
 </div>
-<div id="content">
-  {{ post.html|safe }}
+<div>
+  {{ post_content }}
 </div>
 {% endblock content %}

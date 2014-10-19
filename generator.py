@@ -5,8 +5,9 @@ from flask import render_template
 from werkzeug import cached_property
 
 import markdown
+import os
 
-POST_FILE_EXTENSION = '.md'
+POSTS_FILE_EXTENSION = '.md'
 
 app = Flask(__name__)
 
@@ -25,10 +26,10 @@ def index():
     return 'Hello, World!'
 
 @app.route('/blog/<path:path>')
-def post():
+def post(path):
     path = os.path.join('posts', path + POSTS_FILE_EXTENSION)
     post = Post(path)
     return render_template('post.html', path=path)
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run(port=8000, debug=True)
